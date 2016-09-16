@@ -35,6 +35,7 @@ var controller = {
     thatController = this;
     setInterval(function() {
       if(counter % 1 === 0) {
+
         thatController.playerInput();
       }
       if(counter % 10 === 0) {
