@@ -14,8 +14,9 @@ function hashSample( obj ) {
 
 var colors = ['#ff0000', '#00ff00', '#0000ff', '#3b5998', '593001'];
 var pieces = {
-              // something 2nd iteration of Ls
-              "rightL": [4, 5, 6, 16], 
+
+              // something wrong with 2nd iter of right/leftL
+              "rightL": [4, 5, 6, 16],
               "leftL": [4, 14 ,5, 6], 
               "column": [4, 5, 6, 7],
               "leftS": [4, 5, 15, 16],
@@ -42,12 +43,12 @@ var model = {
   }, 
 
   //will handle keyPress of UPLEFTDOWNRIGHT+SPACE
-  movePiece: function(keyPress) {
-    if (keyPress === 40) {//down
+  movePiece: function() {
+    if (this.keyPress === 40) {//down
       this.fallPiece();
-      model.keyPress = undefined;
+      this.keyPress = undefined;
     }
-    else if (keyPress === 37) {
+    else if (this.keyPress === 37) {
       this.currentPiece = this.currentPiece.map( function(el) {
         return el - 1;
       });
@@ -56,9 +57,9 @@ var model = {
           return el + 1;
         });
       }
-      model.keyPress = undefined;
+      this.keyPress = undefined;
     }
-    else if (keyPress === 39) {
+    else if (this.keyPress === 39) {
       this.currentPiece = this.currentPiece.map( function(el) {
         return el + 1;
       });
@@ -67,13 +68,13 @@ var model = {
           return el - 1;
         });
       }
-      model.keyPress = undefined;
-    } else if (keyPress === 38) {
+      this.keyPress = undefined;
+    } else if (this.keyPress === 38) {
       model.rotate(); // ROTATEEDIT
-      model.keyPress = undefined;
+      this.keyPress = undefined;
     }
 
-    this.movedPiece = keyPress;
+    this.movedPiece = this.keyPress;
   },
 
   checkForBoundary: function() {

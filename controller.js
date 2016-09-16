@@ -43,7 +43,7 @@ var controller = {
       } 
       //logic, validations
       
-      
+  
       model.checkForBoundary();
       model.clearLines();
       //rerender
