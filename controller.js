@@ -18,16 +18,8 @@ var controller = {
 
   reRender: function () {
     view.clear();
-      view.render(model.currentPiece, model.grid);
+    view.render(model.currentPiece, model.grid);
   },
-
-//Take the following method out; put into model
-  playerInput: function(){
-    var button = model.keyPress;
-    model.movePiece(button);
-  },
-
-
 
   gameLoop: function() {
     model.generatePiece();
@@ -35,15 +27,12 @@ var controller = {
     thatController = this;
     setInterval(function() {
       if(counter % 1 === 0) {
-
-        thatController.playerInput();
+        model.movePiece(model.keyPress);
       }
       if(counter % 10 === 0) {
         model.fallPiece();
       } 
       //logic, validations
-      
-  
       model.checkForBoundary();
       model.clearLines();
       //rerender

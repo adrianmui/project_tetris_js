@@ -12,7 +12,7 @@ function hashSample( obj ) {
     return [key, obj[key]];
 };
 
-var colors = ['#ff0000', '#00ff00', '#0000ff', '#3b5998', '593001'];
+var colors = ['#ff0000'] //'#00ff00']//, '#0000ff', '#3b5998', '593001'];
 var pieces = {
 
               // something wrong with 2nd iter of right/leftL
@@ -52,7 +52,7 @@ var model = {
       this.currentPiece = this.currentPiece.map( function(el) {
         return el - 1;
       });
-      if(model.checkForLeftRight()) {
+      if(this.checkForLeftRight()) {
         this.currentPiece = this.currentPiece.map( function(el) {
           return el + 1;
         });
@@ -63,7 +63,7 @@ var model = {
       this.currentPiece = this.currentPiece.map( function(el) {
         return el + 1;
       });
-      if(model.checkForLeftRight()) {
+      if(this.checkForLeftRight()) {
         this.currentPiece = this.currentPiece.map( function(el) {
           return el - 1;
         });
@@ -80,11 +80,9 @@ var model = {
   checkForBoundary: function() {
   
     //right boundary
-    
     var endIndex = this.currentPiece.length - 1;
     
     if (this.currentPiece[endIndex] % 10 === 1) {
-    
       this.currentPiece = this.currentPiece.map(function(el) {
         return el - 1;
 
@@ -96,9 +94,7 @@ var model = {
         return el + 1;
       });
     }  
-
   },
-
 
   checkForLeftRight: function() {
     var currentPiece = this.currentPiece;
@@ -144,7 +140,6 @@ var model = {
   fallPiece: function(){
     this.currentPiece = this.currentPiece.map(function(el){
       return el + 10;
-
     });
     if(this.checkForBotGrid() || this.checkForBottom()) {
       for(var i = 0; i < this.currentPiece.length; i ++) {
@@ -167,8 +162,6 @@ var model = {
     this.currentPiece = pieceArr[1];
   },
 
-
-
   clearLines: function() {
     this.grid = this.grid.sort();
     var counter = 0;
@@ -187,7 +180,7 @@ var model = {
       if ((this.grid[id] + 1) === this.grid[i]) {
         counter++;
       } else {
-        counter = 1;
+        counter = 0;
       }
       id++;
     }
