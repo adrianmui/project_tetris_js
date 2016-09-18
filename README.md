@@ -5,6 +5,6 @@ Dylan + Adrian
 
 ### Check it out 
  
- https://adrianmui.github.io/project_tetris_js/
+https://adrianmui.github.io/project_tetris_js/
  
- [Tetris](http://imgur.com/a/Li3Nm)()
+![Tetris](http://imgur.com/a/Li3Nm)
