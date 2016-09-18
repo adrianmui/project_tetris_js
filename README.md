@@ -7,4 +7,4 @@ Dylan + Adrian
  
 https://adrianmui.github.io/project_tetris_js/
  
-![Tetris](http://imgur.com/a/Li3Nm)
+![Tetris](https://postimg.org/image/dabj9vckv/)
