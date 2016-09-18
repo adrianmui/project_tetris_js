@@ -7,4 +7,4 @@ Dylan + Adrian
  
 https://adrianmui.github.io/project_tetris_js/
  
-![Tetris](https://postimg.org/image/dabj9vckv/)
+[![Screen Shot 2016-09-17 at 11.57.40 PM.png](https://s11.postimg.org/y77rejalv/Screen_Shot_2016_09_17_at_11_57_40_PM.png)](https://postimg.org/image/dabj9vckv/)
